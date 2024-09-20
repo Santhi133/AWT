@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://oomvui-8080.ocws.app/?vscodeBrowserReqId=1726641299936 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML + CSS + JS</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body bgcolor="Black">
+    <div id="root">
+      <div>
+        <img src="./html.svg" class="logo">
+        <img src="./css.svg" class="logo">
+        <img src="./javascript.svg" class="logo">
+      </div>
+
+    <h1 id="heading">HTML+ CSS+Javascript</h1>
+  <button onclick="colorchange()">changecolor</button>
+    
+    <p class="read-instructions" style="display: none;">
+      Change HTML/ CSS/ JS code and hit refresh the URL to see the changes.
+    </p>
+  </div>
+  
+  <script src="./script.js.download"></script>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function() {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function(msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			console.log('Live reload enabled.');
+		})();
+	}
+	// ]]>
+</script>
+
+ 
+ 
+</body></html>

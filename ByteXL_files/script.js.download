@@ -1,0 +1,43 @@
+// let array1 = [1, 2, 3, 4];
+// let arr2 = [...array1, 6, 7, 8];
+
+// console.log(arr2);
+
+// const data = {
+//   age : 34,
+//   marks: 200,
+// }
+// const student = {
+//   roll : 22107133,
+//   branch : "IT",
+//   name : "Santhiiiii",
+//   ...data
+// }
+// console.log(student)
+// function parent( a){
+//   console.log(a);
+// }
+// function child(){
+//   console.log("hyee");
+// }
+
+// parent(child);
+
+// function parent(a){
+//   a()
+// }
+// function child(){
+//   console.log("child");
+// }
+
+// parent(child)*
+
+// console.log(div)
+// console.dir(document)
+// for(k in document)
+function colorchange(){
+let ele = document.getElementById('heading')
+ele.style.fontsize = "100px"
+ele.style.background="grey"
+document.body.style.backgroundColor = "Red"
+}

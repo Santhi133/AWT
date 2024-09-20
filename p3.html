@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #fff;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover td {
+            background-color: #f1f1f1;
+        }
+
+        table th[colspan] {
+            text-align: center;
+            background-color: #f2d9d9;
+            font-size: 18px;
+            padding: 15px 10px;
+        }
+
+        table th[rowspan] {
+            background-color: #d9e2f2;
+        }
+
+        tr td:nth-child(8),
+        tr td:nth-child(9),
+        tr td:nth-child(10) {
+            background-color: #e7f2d9;
+        }
+
+        tr td:nth-child(2),
+        tr td:nth-child(3),
+        tr td:nth-child(7) {
+            background-color: #f2e7d9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="8">Year & Section: III-B.Tech & B</th>
+                    <th>ROOM NO: ATF-03</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Day/Hour</td>
+                    <td>8:15-9:10</td>
+                    <td>9:10-10:05</td>
+                    <td>10:05-10:20</td>
+                    <td>10:20-11:15</td>
+                    <td>11:15-12:10</td>
+                    <td>12:10-1:05</td>
+                    <td>1:05-2:00</td>
+                    <td>2:00-2:55</td>
+                    <td>2:55-3:50</td>
+                </tr>
+                <tr>
+                    <td>MON</td>
+                    <td>FLAT</td>
+                    <td>SE</td>
+                    <td rowspan="6">BREAK</td>
+                    <td>CN</td>
+                    <td>SS LAB</td>
+                    <td></td>
+                    <td>LUNCH BREAK</td>
+                    <td>OPEN ELECTIVES</td>
+                    <td>Minor / Honor (AWT)</td>
+                </tr>
+                <tr>
+                    <td>TUE</td>
+                    <td>SE (NP-LAB)</td>
+                    <td>FLAT(T)</td>
+                    <td>CN</td>
+                    <td>ML</td>
+                    <td></td>
+                    <td>LUNCH BREAK</td>
+                    <td>OPEN ELECTIVES</td>
+                    <td>Coding Practices</td>
+                </tr>
+                <tr>
+                    <td>WED</td>
+                    <td>ML</td>
+                    <td>FLAT</td>
+                    <td>Minor / Honor (AWT)</td>
+                    <td>SE</td>
+                    <td></td>
+                    <td>LUNCH BREAK</td>
+                    <td>Coding Practices</td>
+                </tr>
+                <tr>
+                    <td>THU</td>
+                    <td>CN (DA-LAB)</td>
+                    <td>ML</td>
+                    <td>Library</td>
+                    <td>Minor / Honor (AWT)</td>
+                    <td></td>
+                    <td>LUNCH BREAK</td>
+                    <td>OPEN ELECTIVES</td>
+                    <td>Coding Practices</td>
+                </tr>
+                <tr>
+                    <td>FRI</td>
+                    <td>FLAT</td>
+                    <td>SE</td>
+                    <td>ML (DA-LAB)</td>
+                    <td></td>
+                    <td></td>
+                    <td>LUNCH BREAK</td>
+                    <td>Minor / Honor (AWT)</td>
+                    <td>Coding Practices</td>
+                </tr>
+                <tr>
+                    <td>SAT</td>
+                    <td>Minor / Honor (AWT)</td>
+                    <td>IDP-1 (NP-LAB)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>LUNCH BREAK</td>
+                    <td>OPEN ELECTIVES</td>
+                    <td>Coding Practices</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+            const today = new Date().getDay();
+            
+            let rows = document.querySelectorAll("tbody tr");
+            rows.forEach(row => {
+                if(row.querySelector("td").textContent === days[today]) {
+                    row.style.backgroundColor = "#ffeb99";  // Highlight current day
+                }
+            });
+        });
+    </script>
+</body>
+</html>
